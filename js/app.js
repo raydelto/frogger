@@ -107,7 +107,7 @@ Player.prototype.update = function(){
 	
 	if(this.vidas === 0){
 		this.render();
-		alert("Oh no! Haz perdido! Presiona OK para volver a jugar");
+		alert("Oh no! Has perdido! Presiona OK para volver a jugar");
 		this.cantG = 0;
 		this.vidas = 3;
 		this.reinicio();
@@ -115,7 +115,7 @@ Player.prototype.update = function(){
 	}
 	if(this.y < 0){
 		this.render();
-		alert("Felicidades haz ganado! Tu puntuacion ha sido: "+this.cantG+", Presiona OK para volver a jugar");
+		alert("Felicidades has ganado! Tu puntuacion ha sido: "+this.cantG+", Presiona OK para volver a jugar");
 		this.cantG = 0;
 		this.vidas = 3;
 		this.reinicio();
