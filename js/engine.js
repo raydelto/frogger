@@ -14,6 +14,7 @@
  * a little simpler to work with.
  */
 
+
 var Engine = (function(global) {
     /* Predefine the variables we'll be using within this scope,
      * create the canvas element, grab the 2D context for that canvas
@@ -91,6 +92,7 @@ var Engine = (function(global) {
      * render methods.
      */
     function updateEntities(dt) {
+		
         allEnemies.forEach(function(enemy) {
             enemy.update(dt);
         });
@@ -107,8 +109,9 @@ var Engine = (function(global) {
         /* This array holds the relative URL to the image used
          * for that particular row of the game level.
          */
+		 
         var rowImages = [
-                'images/meta.png',   // Top row is water // Ahora es una meta :D
+                'images/meta2.png',   // Top row is water // Ahora es una meta :D
                 'images/stone-block.png',   // Row 1 of 3 of stone
                 'images/stone-block.png',   // Row 2 of 3 of stone
                 'images/stone-block.png',   // Row 3 of 3 of stone
@@ -118,6 +121,12 @@ var Engine = (function(global) {
             numRows = 6,
             numCols = 5,
             row, col;
+			
+			if(player.cantG > 2){
+				rowImages[0] = 'images/meta.png';
+			}else{
+				rowImages[0] = 'images/meta2.png';
+			}
 
         /* Loop through the number of rows and columns we've defined above
          * and, using the rowImages array, draw the correct image for that
@@ -148,10 +157,11 @@ var Engine = (function(global) {
         /* Loop through all of the objects within the allEnemies array and call
          * the render function you have defined.
          */
+		 
+		gema.render();
         allEnemies.forEach(function(enemy) {
             enemy.render();
         });
-
         player.render();
     }
 
@@ -175,7 +185,12 @@ var Engine = (function(global) {
         'images/char-boy.png',
 		'images/carlos.png',
 		'images/carlos.gif',
-		'images/meta.png'
+		'images/meta.png',
+		'images/Gem Green.png',
+		'images/Gem Blue.png',
+		'images/Gem Orange.png',
+		'images/Heart.png',
+		'images/meta2.png'
     ]);
     Resources.onReady(init);
 
